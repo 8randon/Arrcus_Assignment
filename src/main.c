@@ -46,19 +46,19 @@ int main(int argc, char *argv[])
 
 	char buf[MAX_LEN];
 
-	bool inp = false;
 
-	while (inp == false)
-	{
-		if (strcmp(argv[2], "1") == 0) {
-			insert(ptr, &rptr);
-		}
-		else if (strcmp(argv[2], "2") == 0) {
-			del(ptr, &rptr);
-		}
-		else if (strcmp(argv[2], "3") == 0) {
-			print(ptr, &rptr);
-		}
+	if (strcmp(argv[2], "1") == 0) {
+		insert(ptr, &rptr);
+	}
+	else if (strcmp(argv[2], "2") == 0) {
+		del(ptr, &rptr);
+	}
+	else if (strcmp(argv[2], "3") == 0) {
+		print(ptr, &rptr);
+	}
+	else {
+		printf("Invalid input %s.\n", argv[2]);
+		printf("Acceptable commands are\n1: Update/Insert\n2: Delete\nPrint\n", argv[2]);
 	}
 
 	fclose(ptr);
