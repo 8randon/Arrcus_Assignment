@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	}
 	else {
 		printf("Invalid input %s.\n", argv[2]);
-		printf("Acceptable commands are\n1: Update/Insert\n2: Delete\nPrint\n", argv[2]);
+		printf("Acceptable commands are\n1: Update/Insert\n2: Delete\nPrint\n");
 	}
 
 	fclose(ptr);
