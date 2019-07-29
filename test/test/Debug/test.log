@@ -1,0 +1,2 @@
+﻿  test.c
+c:\users\brandon townsend\source\repos\test\test\test.c(5): fatal error C1083: Cannot open include file: 'sys/shm.h': No such file or directory
