@@ -15,6 +15,11 @@
 
 int main(int argc, char *argv[])
 {
+	if (argc != 3) {
+		printf("USAGE: Arrcus_Assignment input_file mode\n");
+		exit(1);
+	}
+
 	struct region *rptr;
 	int fd;
 
@@ -23,14 +28,15 @@ int main(int argc, char *argv[])
 	fd = shm_open("/myregion", O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
 
 	if (fd == -1)
-		printf("ERROR\n");
+		printf("ERROR\n"); exit(1);
 
 	if (ftruncate(fd, sizeof(struct region)*TABLE_SIZE) == -1)
-		printf("ERROR\n");
+		printf("ERROR\n"); exit(1);
 
 	rptr = mmap(NULL, sizeof(struct region)*TABLE_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 	if (rptr == MAP_FAILED)
-		printf("ERROR\n");
+		printf("ERROR\n"); exit(1);
+	
 
 
 	int key = 0;
