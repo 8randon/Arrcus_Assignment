@@ -26,8 +26,8 @@ void print(FILE* ptr, region**rptr)
 				printf("--------\n");
 				printf("key: %d | value: %s\n", (*rptr)[key].key, (*rptr)[key].buff);
 			}
-			else if(key < TABLE_SIZE) { printf("--------\nInvalid key. Keys must be between 0 and %d\n--------\n", TABLE_SIZE); }
-			else if ((*rptr)[key].key != 0) { (printf("--------\nNo value exitst at key %d\n--------\n", key)); }
+			else if(key > TABLE_SIZE) { printf("--------\nInvalid key. Keys must be between 0 and %d\n--------\n", TABLE_SIZE); }
+			else if ((*rptr)[key].key == 0) { (printf("--------\nNo value exitst at key %d\n--------\n", key)); }
 		//}
 		printf("--------\n");
 	}
