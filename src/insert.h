@@ -68,6 +68,5 @@ void insert(FILE* ptr, region** rptr)
 		}
 		else { printf("Table has reached max capacity\n"); }
 	}
-
 	return;
 }

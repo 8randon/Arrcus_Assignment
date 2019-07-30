@@ -18,11 +18,16 @@
 
 void print(FILE* ptr, region**rptr)
 {
-	for (int i = 0; i < TABLE_SIZE; i++) {
-		if ((*rptr)[i].key != 0) {
-			printf("--------\n");
-			printf("key: %d | value: %s\n", (*rptr)[i].key, (*rptr)[i].buff);
-		}
+	int key = 0;
+	char buf[MAX_LEN];
+	while (fscanf(ptr, "%d %s", &key, buf) == 2) {
+		//for (int i = 0; i < TABLE_SIZE; i++) {
+			if (key < TABLE_SIZE && (*rptr)[key].key != 0) {
+				printf("--------\n");
+				printf("key: %d | value: %s\n", (*rptr)[key].key, (*rptr)[key].buff);
+			}
+			else { printf("--------\nInvalid key. Keys must be between 0 and %d\n--------\n", TABLE_SIZE); }
+		//}
+		printf("--------\n");
 	}
-	printf("--------\n");
 }
