@@ -19,10 +19,10 @@
 void print(FILE* ptr, region**rptr)
 {
 	for (int i = 0; i < TABLE_SIZE; i++) {
-		printf("---------\n");
-		if ((*rptr)[i].buff[0] != '\0') {
+		if ((*rptr)[i].key != 0) {
 			printf("key: %d\n", (*rptr)[i].key);
 			printf("value: %s\n", (*rptr)[i].buff);
 		}
+		printf("%d, %s\n", (*rptr)[10].key, (*rptr)[10].buff);
 	}
 }

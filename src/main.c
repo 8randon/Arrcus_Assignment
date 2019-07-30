@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
 
 	for (int p = 0; p < TABLE_SIZE; p++)
 	{
-		memset(rptr[p].buff, '\0', sizeof(rptr[p].buff));
 		rptr[p].key = 0;
 		strcpy(rptr[p].buff, buf);
 	}
