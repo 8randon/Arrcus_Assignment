@@ -61,13 +61,20 @@ void insert(FILE* ptr, region** rptr)
 					memset((*rptr)[key].buff, '\0', sizeof((*rptr)[key].buff));
 					(*rptr)[key].key = key;
 					strcpy((*rptr)[key].buff, buf);
-					printf("%d, %s\n", (*rptr)[key].key, (*rptr)[key].buff);
+					//printf("%d, %s\n", (*rptr)[key].key, (*rptr)[key].buff);
 				}
 				
 			}
 			else { printf("Invalid key. Keys must be between 0 and %d\n", TABLE_SIZE); }
 		}
 		else { printf("Table has reached max capacity\n"); }
+	}
+
+	for (int i = 0; i < TABLE_SIZE; i++) {
+		if ((*rptr)[i].key != 0) {
+			printf("key: %d\n", (*rptr)[i].key);
+			printf("value: %s\n", (*rptr)[i].buff);
+		}
 	}
 
 	return;
