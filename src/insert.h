@@ -43,15 +43,18 @@ void insert(FILE* ptr, region** rptr)
 				bool overwrite = false;
 
 				if (overwriteAll == false) {
-					while (choice == false) {
-						printf("Item %s exists at %d, would you like to overwrite?(y/n) ", (*rptr)[key].buff, key);
-						char c[2];
-						scanf("%*[^\n]"); scanf("%*c");
-						fgets(c, 2, stdin);
-						if (c[0] == 'y' || c[0] == 'Y') { overwrite = true;  choice = true; }
-						else if (c[0] == 'n' || c[0] == 'N') { choice = true; }
-						else { printf("Invalid input %s %ld\n", c, sizeof(c)); }
+					if ((*rptr)[key].key != 0) {
+						while (choice == false) {
+							printf("Item %s exists at %d, would you like to overwrite?(y/n) ", (*rptr)[key].buff, key);
+							char c[2];
+							scanf("%*[^\n]"); scanf("%*c");
+							fgets(c, 2, stdin);
+							if (c[0] == 'y' || c[0] == 'Y') { overwrite = true;  choice = true; }
+							else if (c[0] == 'n' || c[0] == 'N') { choice = true; }
+							else { printf("Invalid input %s %ld\n", c, sizeof(c)); }
+						}
 					}
+					else { overwrite = true; }
 				}
 				
 				if (overwriteAll == true || overwrite ==true) {
