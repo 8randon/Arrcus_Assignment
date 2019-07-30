@@ -23,6 +23,5 @@ void print(FILE* ptr, region**rptr)
 			printf("key: %d\n", (*rptr)[i].key);
 			printf("value: %s\n", (*rptr)[i].buff);
 		}
-		printf("%d, %s\n", (*rptr)[10].key, (*rptr)[10].buff);
 	}
 }
